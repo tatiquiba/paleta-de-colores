@@ -1,0 +1,29 @@
+/*sass style*/
+
+.bg-car {
+	background-image: url(../img/carousel-bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding: 100px 100px;
+}
+
+@mixin box($color){
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+	
+}
+.uno{ @include box($uno);}
+.dos{ @include box($dos);}
+.tres{ @include box($tres);}
+
+@mixin box-color($color){
+	background-color: $color;
+}
+
+.box{
+	@include box-color($uno);
+	&.uno {@include box-color($uno);}
+	&.dos {@include box-color($dos);}
+	&.tres {@include box-color($tres);}
+}
